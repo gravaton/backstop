@@ -34,12 +34,12 @@ end
 
 As you can see, instead of notifying using a symbol to specify the desired action, we're passing a Hash as the first parameter.  The Hash passed must contain at least two elements:
 
-:action - a symbol denoting the action to be called on the target object
-:resource - a string denoting the final target of the notification
+* :action - a symbol denoting the action to be called on the target object
+* :resource - a string denoting the final target of the notification
 
 When the "execute" action is performed on the backstop object, all notifications that had been sent to the object previously in the run will be de-duplicated and forwarded to their intended targets.  Future notifications sent to the backstop object will be queued and wait for another "execute" action.  It is perfectly possible to have multiple backstop objects, as long as each has a unique name.
 
-SYNTAX NOTE:  You can see that the 'notifies' statements above use parenthesis ().  This is due to a Ruby issue where passing a Hash literal as a parameter to a function is sometimes misinterpreted as passing a block.  
+SYNTAX NOTE:  You can see that the 'notifies' statements above use parenthesis ().  This is due to a Ruby issue where passing a Hash literal as a parameter to a function is sometimes misinterpreted as passing a block.
 
 License and Authors
 -------------------
